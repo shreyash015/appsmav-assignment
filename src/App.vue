@@ -1,14 +1,14 @@
 <template>
-  <SearchComponent msg="Welcome to Your Vue.js App"/>
+  <ContactsCompnent/>
 </template>
 
 <script>
-import SearchComponent from './components/SearchComponent.vue'
+import ContactsCompnent from './components/ContactsCompnent.vue'
 
 export default {
   name: 'App',
   components: {
-    SearchComponent
+    ContactsCompnent
   }
 }
 </script>
@@ -20,6 +20,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding: 2rem;
+  max-width: 28rem;
+  margin: 0 auto;
+  height: 45rem;
+  border: 1px solid grey;
+  overflow: scroll;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
+
 </style>
