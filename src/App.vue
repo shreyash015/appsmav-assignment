@@ -1,14 +1,16 @@
 <template>
-  <ContactsCompnent/>
+<router-view></router-view>
+  <!-- <ContactsCompnent/>
+<router-view /> -->
 </template>
 
 <script>
-import ContactsCompnent from './components/ContactsCompnent.vue'
+// import ContactsCompnent from './components/ContactsCompnent.vue'
 
 export default {
   name: 'App',
   components: {
-    ContactsCompnent
+    // ContactsCompnent
   }
 }
 </script>
@@ -21,7 +23,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   padding: 2rem;
-  max-width: 28rem;
+  width: 28rem;
   margin: 0 auto;
   height: 45rem;
   border: 1px solid grey;
