@@ -1,3 +1,10 @@
 <template>
-    <div class="">hi this is detail screen</div>
+    <div class=""></div>
 </template>
+
+
+<script>
+    export default{
+        name: 'DetailScreen',
+    }
+</script>

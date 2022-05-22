@@ -26,7 +26,7 @@ export default {
   width: 28rem;
   margin: 0 auto;
   height: 45rem;
-  border: 1px solid grey;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);  
   overflow: scroll;
   position: absolute;
   top: 50%;
