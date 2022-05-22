@@ -2,7 +2,7 @@
   <div class="">
     <h1 class="text-gray-400 uppercase font-bold text-left">My Contact</h1>
     <SearchComponent />
-    <div class="contact-card-container mt-8 max-h-full overflow-scroll">
+    <div class="contact-card-container mt-8  overflow-scroll">
       <div
         class="contact-card-container"
         v-for="contact in sortedContacts()"
@@ -15,12 +15,11 @@
           v-if="contacts.length"
         />
       </div>
-
-      <div
+            <!-- <div
         class="add-contact btn bg-blue-500 rounded-full w-6 mx-auto text-white absolute left-1/2"
       >
         +
-      </div>
+      </div> -->
     </div>
     <!-- <font-awesome-icon icon="fa-solid fa-circle-plus" /> -->
   </div>
@@ -64,6 +63,6 @@ export default {
 
 <style scoped>
 .contact-card-container {
-  max-height: 520px;
-}
+  /* max-height: 520px; */
+  }
 </style>

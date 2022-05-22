@@ -17,6 +17,8 @@
         <h2 class="text-blue-400 mt-4">Email Address</h2>
         <p class="text-lg text-gray-400 font-bold">testname@textdomain.com</p>
     </div>
+
+
   </div>
 </template>
 
