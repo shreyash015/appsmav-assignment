@@ -9,7 +9,7 @@
         :key="contact.phoneNumber"
       >
         <ContactCard
-          @click="this.$router.push('detail')"
+          @click="this.$router.push(`/details/${(contact.phoneNumber).replace(/ /g,'')}`)"
           class="mt-4 cursor-pointer"
           :contact="contact"
           v-if="contacts.length"

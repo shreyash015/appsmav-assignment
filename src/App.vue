@@ -1,16 +1,14 @@
 <template>
 <router-view></router-view>
-  <!-- <ContactsCompnent/>
-<router-view /> -->
+
+
 </template>
 
 <script>
-// import ContactsCompnent from './components/ContactsCompnent.vue'
 
 export default {
   name: 'App',
   components: {
-    // ContactsCompnent
   }
 }
 </script>

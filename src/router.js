@@ -1,5 +1,3 @@
-// import Vue from 'vue';
-// import Router from 'vue-router'
 import { createWebHistory, createRouter } from "vue-router";
 import DetailScreen from './components/DetailScreen'
 import ContactsComponent from './components/ContactsCompnent'
@@ -13,7 +11,7 @@ const routes =
             component:ContactsComponent,
         },
         {
-            path:'/detail',
+            path:'/details/:phnumber',
             name: 'Detail',
             component: DetailScreen
         }
