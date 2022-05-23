@@ -1,5 +1,5 @@
 <template>
-  <div class="p-5 h-screen">
+  <div class="p-5">
     <router-view></router-view>
   </div>
     <FooterComponent />

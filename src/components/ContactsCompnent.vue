@@ -63,6 +63,6 @@ export default {
 
 <style scoped>
 .contact-card-container {
-  /* max-height: 520px; */
+  max-height: 520px;
   }
 </style>

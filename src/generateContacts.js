@@ -19,8 +19,4 @@ class Person {
             contacts.unshift(person);
       }
     }
-
-    // console.log(contacts)
-
-
 export default contacts;
