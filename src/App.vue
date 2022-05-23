@@ -1,15 +1,18 @@
 <template>
-<router-view></router-view>
-
-
+  <div class="p-5">
+    <router-view></router-view>
+  </div>
+    <FooterComponent />
 </template>
 
 <script>
+import FooterComponent from './components/FooterComponent.vue';
 
 export default {
   name: 'App',
   components: {
-  }
+    FooterComponent,
+}
 }
 </script>
 
@@ -20,7 +23,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  padding: 2rem;
+  /* padding: 2rem; */
   width: 28rem;
   margin: 0 auto;
   height: 45rem;
@@ -30,6 +33,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+
 }
 
 </style>
