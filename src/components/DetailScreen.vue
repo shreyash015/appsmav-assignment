@@ -1,13 +1,13 @@
 <template>
   <div class="detail-container">
-    <p class="text-gray-400 uppercase font-bold text-left hover:cursor-pointer" @click="$router.go(-1)">
+    <p class="text-gray-400 uppercase font-bold text-left hover:cursor-pointer" @click="prevScreen()">
       <fa icon="angle-left" />
       Back
     </p>
     <div class="w-32 shadow-xl border border-gray-100 flex justify-center items-center h-32 rounded-full mx-auto">
       <p class="name-initials text-5xl text-blue-400 font-bold" v-if="requiredContact.length">
         {{ `${requiredContact[0].firstName.charAt(0).toUpperCase()}
-                ${requiredContact[0].lastName.charAt(0).toUpperCase()}`
+            ${requiredContact[0].lastName.charAt(0).toUpperCase()}`
         }}</p>
     </div>
 
@@ -17,7 +17,7 @@
       <div v-else class="flex items-center border-b border-gray-300 py-2">
         <input
           class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
-          type="text" aria-label="Full name" v-model="requiredContact[0].firstName">
+          type="text" aria-label="Full name" @input="emitEdits" v-model="requiredContact[0].firstName">
       </div>
 
       <h2 class="text-blue-400 mt-4">Last Name</h2>
@@ -25,7 +25,7 @@
         <div v-else class="flex items-center border-b border-gray-300 py-2">
         <input
           class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
-          type="text" aria-label="Full name" v-model="requiredContact[0].lastName">
+          type="text" aria-label="Full name" @input="emitEdits" v-model="requiredContact[0].lastName">
       </div>
 
       <h2 class="text-blue-400 mt-4">Phone Number</h2>
@@ -33,7 +33,7 @@
       <div v-else class="flex items-center border-b border-gray-300 py-2">
         <input
           class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
-          type="text" aria-label="Full name" v-model="requiredContact[0].phoneNumber">
+          type="text" aria-label="Full name" @input="emitEdits" v-model="requiredContact[0].phoneNumber">
       </div>
 
 
@@ -42,7 +42,7 @@
       <div v-else class="flex items-center border-b border-gray-300 py-2">
         <input
           class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"
-          type="text" aria-label="Full name" v-model="requiredContact[0].email">
+          type="text" aria-label="Full name" @input="emitEdits" v-model="requiredContact[0].email">
       </div>
     </div>
   </div>
@@ -68,13 +68,21 @@ export default {
         return el.phoneNumber === requiredNumber;
       });
     },
+    prevScreen(){
+      this.editMode = false;
+      this.emitter.emit('edit-mode',{'editorMode':false});
+      this.$router.go(-1)
+    },
+    emitEdits(){
+      const anyStringEmpty = !this.requiredContact[0].firstName.trim() || !this.requiredContact[0].lastName.trim() || (this.requiredContact[0].phoneNumber.trim().length<12) || !this.requiredContact[0].email.trim()
+      this.emitter.emit('emty-strings',{'isEmtyString':anyStringEmpty})
+    }
   },
   async mounted() {
     await this.getContactDetails();
   },
   created() {
     this.emitter.on('emit-mode-toggle', (evt) => {
-      console.log('changed')
       this.editMode = evt.editMode;
     })
   }
