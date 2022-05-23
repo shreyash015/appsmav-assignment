@@ -15,13 +15,7 @@
           v-if="contacts.length"
         />
       </div>
-            <!-- <div
-        class="add-contact btn bg-blue-500 rounded-full w-6 mx-auto text-white absolute left-1/2"
-      >
-        +
-      </div> -->
     </div>
-    <!-- <font-awesome-icon icon="fa-solid fa-circle-plus" /> -->
   </div>
 </template>
 
