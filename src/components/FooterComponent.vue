@@ -4,11 +4,11 @@
       <fa v-if="this.$route.path === '/'" :icon="['fas', 'circle-plus']" size="2x"
         class="circle-plus hover:cursor-pointer" />
       <fa v-if="this.$route.name === 'Detail' && !editMode" :icon="['fas', 'pen']"
-        class="circle-pen hover:cursor-pointer" @click="editMode = true"/>
+        class="circle-pen hover:cursor-pointer" @click="emitEvent(true)"/>
       <fa v-if="this.$route.name === 'Detail' && !editMode" :icon="['fas', 'trash-can']"
         class="circle-trashcan hover:cursor-pointer ml-3" />
       <fa v-if="this.$route.name === 'Detail' && editMode" :icon="['fas', 'floppy-disk']"
-        class="circle-floppydisk hover:cursor-pointer ml-3" />
+        class="circle-floppydisk hover:cursor-pointer ml-3" @click="emitEvent(false)" />
 
 
     </div>
@@ -24,6 +24,12 @@ export default {
   data() {
     return {
       editMode: false,
+    }
+  },
+  methods:{
+    emitEvent(editStatus){
+      this.editMode = editStatus;
+      this.emitter.emit('emit-mode-toggle',{'editMode': editStatus});
     }
   },
 }
