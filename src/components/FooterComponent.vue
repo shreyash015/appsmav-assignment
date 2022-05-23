@@ -9,8 +9,6 @@
         class="circle-trashcan hover:cursor-pointer ml-3" />
       <fa v-if="this.$route.name === 'Detail' && editMode" :icon="['fas', 'floppy-disk']"
         class="circle-floppydisk hover:cursor-pointer ml-3" @click="emitEvent(false)" />
-
-
     </div>
     <div class="delete-icon"></div>
   </div>

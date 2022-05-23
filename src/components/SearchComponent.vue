@@ -6,9 +6,10 @@
         placeholder="Type name or number"
         name="search"
         id="search"
+        v-model="searchString"
+        @input='$emit("searchInitiated",$event.target.value)'
         class="py-2 px-4 shadow-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full pr-12 sm:text-sm border-gray-500 rounded-md"
       />
-      <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5"></div>
     </div>
   </div>
 </template>
@@ -16,6 +17,11 @@
 <script>
 export default {
   name: "SearchComponent",
+  data(){
+    return{
+      searchString: ''
+    }
+  },
   props: {
     msg: String,
   },
