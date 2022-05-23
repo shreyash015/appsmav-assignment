@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="contact-container">
     <h1 class="text-gray-400 uppercase font-bold text-left">My Contact</h1>
     <SearchComponent @searchInitiated="searching" />
     <div class="contact-card-container mt-8  overflow-scroll">
@@ -58,6 +58,9 @@ export default {
 </script>
 
 <style scoped>
+.contact-container{
+  height: 640px;
+}
 .contact-card-container {
   max-height: 520px;
 }
