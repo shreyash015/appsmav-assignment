@@ -17,6 +17,10 @@ export default {
 </script>
 
 <style>
+html,body{
+background: lightgray;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,7 +37,8 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-
+  background-color:white;
 }
+
 
 </style>
